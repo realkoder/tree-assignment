@@ -12,7 +12,7 @@ let currentNode;
 
 function loadAnimalQuestions() {
     try {
-        const data = fs.readFileSync('animalsTest.json');
+        const data = fs.readFileSync('animalsQuestionTree.json');
         animalQuestions = JSON.parse(data);
         animalQuestion = { ...animalQuestions[0] };
         currentNode = animalQuestions[0];
@@ -24,7 +24,7 @@ function loadAnimalQuestions() {
 
 function saveAnimalQuestions() {
     try {
-        fs.writeFileSync('animalsTest.json', JSON.stringify(animalQuestions, null, 2));
+        fs.writeFileSync('animalsQuestionTree.json', JSON.stringify(animalQuestions, null, 2));
     } catch (err) {
         console.error('Error writing to animals.json:', err);
         process.exit(1);
