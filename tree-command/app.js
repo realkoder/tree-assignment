@@ -9,8 +9,7 @@ async function listDirectories(directoryPath, indent) {
             const filePath = path.join(directoryPath, fileName);
             const stats = await fs.stat(filePath);
 
-            if (stats.isDirectory()) {
-                // Use different characters for indentation (├── and │)
+            if (stats.isDirectory()) {                
                 const prefix = indent === 0 ? '' : '│   '.repeat(indent - 1) + '├── ';
                 console.log(prefix + fileName);
 
